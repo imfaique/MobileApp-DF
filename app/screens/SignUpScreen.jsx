@@ -9,10 +9,11 @@ import {
     TouchableOpacity,
     View,
     KeyboardAvoidingView,
-    ToastAndroid
+    ToastAndroid,
+
 
 } from "react-native";
-import React, { useState, createRef } from "react";
+import React, { useState, createRef, useSyncExternalStore, useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from '@react-navigation/native';
 import colors from "../config/colors";
@@ -34,8 +35,34 @@ const gradient = [colors["dark-gray"], colors.black];
 const WIDTH = Dimensions.get('window').width
 const HEIGHT = Dimensions.get('window').height
 
+// export default function EmailVerification(){
+//        let {userName} = useParams(); 
+//        let {token} = useParams(); 
+//        const [isValidToken,setIsValidToken]=useState(false);
+//        const classes= useStyles();
+
+//        function verifyEmailToken(userName,emailtoken){
+//         console.log('testing Function')
+//         const usernameAndToken={
+//             userName: userName,
+//             emailtoken: emailtoken,
+//         }
+//         axios.post('http//localhost:5000/verifyEmailToken',usernameAndToken)
+//         .then(response=>{
+//             const responseStatus = response.data.status;
+//             if (responseStatus== 'okey') {
+//                 setIsValidToken(true);
+//             }
+//         })
+//        }
+//        useEffect(()=>{
+//         verifyEmailToken(userName,token)
+//        })
+// }
+
 const SignUpScreen = ({ navigation }) => {
     console.log(API)
+
 
 
     const showToastWithGravity = () => {
@@ -191,6 +218,8 @@ const SignUpScreen = ({ navigation }) => {
                 console.error(error);
             });
     };
+
+
 
     return (
         <View style={{ flex: 1, backgroundColor: '#ffffff', borderTopLeftRadius: 60, }}>

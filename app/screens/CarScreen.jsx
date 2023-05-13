@@ -248,7 +248,18 @@ const CarScreen = () => {
                                                 name="arrow-forward"
                                                 size={SPACING * 2}
                                                 color={colors.light}
-                                                onPress={useNavigation()}
+                                                onPress={() => {
+                                                    navigation.navigate('Booking', {
+                                                        name: car.name,
+                                                        vehicletype: car.vehicleType,
+                                                        companyname: car.companyName,
+                                                        model: car.model,
+                                                        modelyear: car.modelYear,
+                                                        registrationno: car.registrationNo,
+                                                        contactno: car.contactNo,
+                                                        rent: car.rent
+                                                    })
+                                                }}
                                             />
                                         </LinearGradient>
                                     </TouchableOpacity>

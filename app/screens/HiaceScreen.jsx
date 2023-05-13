@@ -26,13 +26,13 @@ const gradient = [colors["dark-gray"], colors.black];
 // import { REACT_NATIVE_APP_API_KEY } from '@env'
 
 const API = process.env.REACT_NATIVE_APP_API_KEY
-console.log(process.env.REACT_NATIVE_APP_API_KEY)
+console.log(API)
 const HiaceScreen = () => {
 
     const [data, setData] = useState([])
 
     useEffect(() => {
-        let carsURL = `${API}carRegistration/hiace`
+        let carsURL = `${process.env.REACT_NATIVE_APP_API_KEY}carRegistration/hiace`
         console.log(carsURL)
         fetch(carsURL)
             .then((response) => response.json())

@@ -33,13 +33,13 @@ const gradient = [colors["dark-gray"], colors.black];
 const WIDTH = Dimensions.get('window').width
 const HEIGHT = Dimensions.get('window').height
 
-
+API
 const LoginScreen = ({ navigation }) => {
     // const navigation = useNavigation();
 
     const [Agree, setAgree] = useState(false);
-    const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+    const [userName, setUserName] = useState('faiqueraza');
+    const [password, setPassword] = useState('123');
     const [loading, setLoading] = useState(false);
     const [errortext, setErrortext] = useState();
     const [userNameError, setUserNameError] = useState('');

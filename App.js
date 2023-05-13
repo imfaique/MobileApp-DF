@@ -17,6 +17,7 @@ import BookingScreen from "./app/screens/BookingScreen";
 import ForgetPassScreen from "./app/screens/ForgetPassScreen";
 import ConfirmedBookingDetails from './app/screens/ConfirmedBookingDetails';
 import PaymentScreen from './app/screens/PaymentScreen';
+
 const navTheme = {
   ...DefaultTheme,
   colors: {
@@ -55,17 +56,17 @@ const App = () => {
 
       </View> */}
       <NavigationContainer theme={navTheme}>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Navigator initialRouteName="Booking">
+          {/* <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
           <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Company" component={CompanyScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Car" component={CarScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Hiace" component={HiaceScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Coaster" component={CoasterScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Coaster" component={CoasterScreen} options={{ headerShown: false }} /> */}
           <Stack.Screen name="Booking" component={BookingScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="ForgetPass" component={ForgetPassScreen} options={{ headerShown: false }} />
-          {/* <Stack.Screen name="Navigator" component={NavigationBar} options={{ headerShown: false }} /> */}
-          <Stack.Screen name="paymentscreem" component={PaymentScreen} options={{ headerShown: false }} />
+          {/* <Stack.Screen name="ForgetPass" component={ForgetPassScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Navigator" component={NavigationBar} options={{ headerShown: false }} />
+          <Stack.Screen name="paymentscreem" component={PaymentScreen} options={{ headerShown: false }} /> */}
 
 
           {/* <SignUpScreen /> */}
