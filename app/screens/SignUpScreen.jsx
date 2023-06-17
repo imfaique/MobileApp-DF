@@ -26,7 +26,7 @@ import { validateEmail, validateContactNo } from '../../shared/utils'
 import { Positions } from "react-native-calendars/src/expandableCalendar";
 
 const API = process.env.REACT_NATIVE_APP_API_KEY
-console.log(process.env.REACT_NATIVE_APP_API_KEY)
+console.log(API)
 
 const { width } = Dimensions.get("window");
 

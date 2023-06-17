@@ -90,6 +90,7 @@ const CarScreen = () => {
                         colors={[colors.light, colors["dark-gray"]]}
                     >
                         <TouchableOpacity
+                            onPress={() => { navigation.navigate('Profile') }}
                             style={{
                                 height: SPACING * 3,
                                 width: SPACING * 3,

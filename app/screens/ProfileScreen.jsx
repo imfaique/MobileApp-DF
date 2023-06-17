@@ -19,7 +19,7 @@ import series1 from "../data/series1";
 import series2 from "../data/series2";
 import { LinearGradient } from "expo-linear-gradient";
 
-const RatingScreen = () => {
+const ProfileScreen = () => {
 
     const navigation = useNavigation();
     const submit = () => {
@@ -40,39 +40,6 @@ const RatingScreen = () => {
         dropoffLocation: 'hawsbay',
         pickupTime: '10:00 AM',
     });
-
-
-    const [defaultRating, setdefaultRating] = useState(2)
-    const [maxRating, setmaxRating] = useState([1, 2, 3, 4, 5])
-
-    const starImgFilled = 'https://github.com/tranhonghan/images/blob/main/star_filled.png?raw=true'
-    const starImgCorner = 'https://github.com/tranhonghan/images/blob/main/star_corner.png?raw=true'
-
-    const CustomRatingBar = () => {
-        return (
-            <View style={styles.customRatingBarStyle}>
-                {
-                    maxRating.map((item, key) => {
-                        return (
-                            <TouchableOpacity
-                                activeOpacity={0.7}
-                                key={item}
-                                onPress={() => setdefaultRating(item)}>
-                                <Image style={styles.starImgStyle}
-                                    source={
-                                        item <= defaultRating
-                                            ? { uri: starImgFilled }
-                                            : { uri: starImgCorner }
-                                    }
-                                />
-                            </TouchableOpacity>
-                        )
-                    })
-                }
-            </View>
-        )
-    }
-
 
     return (
         <SafeAreaView>
@@ -98,7 +65,7 @@ const RatingScreen = () => {
                             fontWeight: "150",
                         }}
                     >
-                        Rate Us
+                        Profile
                     </Text>
                     {/* <Text
               style={{
@@ -124,26 +91,17 @@ const RatingScreen = () => {
                         }}
                     >
 
-                        <SafeAreaView style={StyleSheet.container}>
-                            {/* <Text style={StyleSheet.textStyle}>Rate us</Text> */}
-                            <CustomRatingBar />
-                            <Text style={{
-                                color: "white",
-                                textAlign: 'center',
-                                fontSize: 23,
-                                marginTop: 20,
-                            }}>
-                                {defaultRating + '/' + maxRating.length}
-                            </Text>
+                        <View style={styles.container}>
+                            <Text style={styles.label}>Name:</Text>
+                            <Text style={styles.info}>Moosa</Text>
+                            <Text style={styles.label}>Email:</Text>
+                            <Text style={styles.info}>moosa@gmail.com</Text>
                             <TouchableOpacity
-                                activeOpacity={0.7}
-                                style={styles.buttonStyle}
-                                onPress={() => alert(defaultRating)}>
-                                <Text style={{
-                                    color: "white",
-                                }}>Confirm Rating</Text>
+                                onPress={() => { navigation.navigate('Company') }}
+                                style={styles.button}>
+                                <Text style={styles.buttonText}>Go to Home Page</Text>
                             </TouchableOpacity>
-                        </SafeAreaView>
+                        </View>
                     </LinearGradient>
                 ))}
 
@@ -175,36 +133,42 @@ const RatingScreen = () => {
     );
 };
 
-export default RatingScreen;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        margin: 10,
-        justifyContent: 'center'
-
-    },
-    textStyle: {
-        textAlign: 'center',
-        fontSize: 23,
-        marginTop: 20
-    },
-    customRatingBarStyle: {
-        justifyContent: 'center',
-        flexDirection: 'row',
-        marginTop: 30,
-    },
-    starImgStyle: {
-        width: 40,
-        height: 40,
-        resizeMode: 'cover'
-
-    },
-    buttonStyle: {
-        justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 30,
-        padding: 15,
+        justifyContent: 'center',
+        paddingHorizontal: 16,
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 16,
+        color: 'white',
+    },
+    label: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 8,
+        color: 'white',
+    },
+    info: {
+        fontSize: 16,
+        marginBottom: 16,
+        color: 'white',
+    },
+    button: {
         backgroundColor: '#C29DCB',
+        paddingHorizontal: 16,
+        paddingVertical: 12,
+        borderRadius: 4,
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
     },
 });

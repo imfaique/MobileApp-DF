@@ -19,7 +19,7 @@ import series1 from "../data/series1";
 import series2 from "../data/series2";
 import { LinearGradient } from "expo-linear-gradient";
 
-const RatingScreen = () => {
+const AcceptBookingScreen = () => {
 
     const navigation = useNavigation();
     const submit = () => {
@@ -40,39 +40,6 @@ const RatingScreen = () => {
         dropoffLocation: 'hawsbay',
         pickupTime: '10:00 AM',
     });
-
-
-    const [defaultRating, setdefaultRating] = useState(2)
-    const [maxRating, setmaxRating] = useState([1, 2, 3, 4, 5])
-
-    const starImgFilled = 'https://github.com/tranhonghan/images/blob/main/star_filled.png?raw=true'
-    const starImgCorner = 'https://github.com/tranhonghan/images/blob/main/star_corner.png?raw=true'
-
-    const CustomRatingBar = () => {
-        return (
-            <View style={styles.customRatingBarStyle}>
-                {
-                    maxRating.map((item, key) => {
-                        return (
-                            <TouchableOpacity
-                                activeOpacity={0.7}
-                                key={item}
-                                onPress={() => setdefaultRating(item)}>
-                                <Image style={styles.starImgStyle}
-                                    source={
-                                        item <= defaultRating
-                                            ? { uri: starImgFilled }
-                                            : { uri: starImgCorner }
-                                    }
-                                />
-                            </TouchableOpacity>
-                        )
-                    })
-                }
-            </View>
-        )
-    }
-
 
     return (
         <SafeAreaView>
@@ -98,7 +65,7 @@ const RatingScreen = () => {
                             fontWeight: "150",
                         }}
                     >
-                        Rate Us
+                        Booking Details
                     </Text>
                     {/* <Text
               style={{
@@ -117,33 +84,30 @@ const RatingScreen = () => {
                         key={item.id}
                         colors={[colors["dark-gray"], colors.black]}
                         style={{
-                            height: 260,
+                            height: 299,
                             borderRadius: SPACING * 2,
                             padding: SPACING * -2,
                             marginBottom: SPACING * 16,
                         }}
                     >
 
-                        <SafeAreaView style={StyleSheet.container}>
-                            {/* <Text style={StyleSheet.textStyle}>Rate us</Text> */}
-                            <CustomRatingBar />
-                            <Text style={{
-                                color: "white",
-                                textAlign: 'center',
-                                fontSize: 23,
-                                marginTop: 20,
-                            }}>
-                                {defaultRating + '/' + maxRating.length}
-                            </Text>
-                            <TouchableOpacity
-                                activeOpacity={0.7}
-                                style={styles.buttonStyle}
-                                onPress={() => alert(defaultRating)}>
-                                <Text style={{
-                                    color: "white",
-                                }}>Confirm Rating</Text>
+                        <View style={styles.container}>
+                            <Text style={styles.title}>Accept Booking</Text>
+                            <Text style={styles.label}>Passenger Name:</Text>
+                            <Text style={styles.info}>{booking.passengerName}</Text>
+                            <Text style={styles.label}>Pickup Location:</Text>
+                            <Text style={styles.info}>{booking.pickupLocation}</Text>
+                            <Text style={styles.label}>Dropoff Location:</Text>
+                            <Text style={styles.info}>{booking.dropoffLocation}</Text>
+                            <Text style={styles.label}>Pickup Time:</Text>
+                            <Text style={styles.info}>{booking.pickupTime}</Text>
+                            <TouchableOpacity style={styles.acceptButton}>
+                                <Text style={styles.buttonText}>Accept</Text>
                             </TouchableOpacity>
-                        </SafeAreaView>
+                            <TouchableOpacity style={styles.acceptButton}>
+                                <Text style={styles.buttonText1}>Reject</Text>
+                            </TouchableOpacity>
+                        </View>
                     </LinearGradient>
                 ))}
 
@@ -175,36 +139,47 @@ const RatingScreen = () => {
     );
 };
 
-export default RatingScreen;
+export default AcceptBookingScreen;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        margin: 10,
-        justifyContent: 'center'
-
+        // backgroundColor: '#F5F5F5',
+        padding: 19,
     },
-    textStyle: {
-        textAlign: 'center',
-        fontSize: 23,
-        marginTop: 20
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 16,
+        color: "white",
     },
-    customRatingBarStyle: {
-        justifyContent: 'center',
-        flexDirection: 'row',
-        marginTop: 30,
+    label: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 8,
+        color: "white",
     },
-    starImgStyle: {
-        width: 40,
-        height: 40,
-        resizeMode: 'cover'
-
+    info: {
+        fontSize: 16,
+        marginBottom: 16,
+        color: "white",
     },
-    buttonStyle: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 30,
-        padding: 15,
+    acceptButton: {
         backgroundColor: '#C29DCB',
+        paddingHorizontal: 16,
+        paddingVertical: 12,
+        borderRadius: 4,
+        alignItems: 'center',
+        marginBottom: 5,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    buttonText1: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
     },
 });

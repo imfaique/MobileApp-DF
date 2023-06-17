@@ -25,7 +25,7 @@ const API = process.env.REACT_NATIVE_APP_API_KEY
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-console.log(API)
+console.log(process.env.REACT_NATIVE_APP_API_KEY)
 const { width } = Dimensions.get("window");
 
 const gradient = [colors["dark-gray"], colors.black];

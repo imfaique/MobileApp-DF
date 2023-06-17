@@ -17,6 +17,11 @@ import BookingScreen from "./app/screens/BookingScreen";
 import ForgetPassScreen from "./app/screens/ForgetPassScreen";
 import ConfirmedBookingDetails from './app/screens/ConfirmedBookingDetails';
 import PaymentScreen from './app/screens/PaymentScreen';
+import RatingScreen from "./app/screens/RatingScreen";
+import ProfileScreen from "./app/screens/ProfileScreen";
+import DashboardScreen from "./app/screens/DashboardScreen";
+import AcceptBookingScreen from "./app/screens/AcceptBookingScreen";
+import OtpScreen from "./app/screens/OtpScreen";
 
 const navTheme = {
   ...DefaultTheme,
@@ -56,7 +61,7 @@ const App = () => {
 
       </View> */}
       <NavigationContainer theme={navTheme}>
-        <Stack.Navigator initialRouteName="Booking">
+        <Stack.Navigator initialRouteName="Login">
           {/* <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
           <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Company" component={CompanyScreen} options={{ headerShown: false }} />
@@ -65,8 +70,14 @@ const App = () => {
           <Stack.Screen name="Coaster" component={CoasterScreen} options={{ headerShown: false }} /> */}
           <Stack.Screen name="Booking" component={BookingScreen} options={{ headerShown: false }} />
           {/* <Stack.Screen name="ForgetPass" component={ForgetPassScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Navigator" component={NavigationBar} options={{ headerShown: false }} />
-          <Stack.Screen name="paymentscreem" component={PaymentScreen} options={{ headerShown: false }} /> */}
+          <Stack.Screen name="Navigator" component={NavigationBar} options={{ headerShown: false }} /> */}
+          {/* <Stack.Screen name="paymentscreem" component={PaymentScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Rating" component={RatingScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="AcceptBooking" component={AcceptBookingScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Otp" component={OtpScreen} options={{ headerShown: false }} /> */}
+          {/* <Stack.Screen name="Chatbot" component={ChatBotScreen} options={{ headerShown: false }} /> */}
 
 
           {/* <SignUpScreen /> */}

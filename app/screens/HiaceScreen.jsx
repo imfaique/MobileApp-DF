@@ -26,7 +26,7 @@ const gradient = [colors["dark-gray"], colors.black];
 // import { REACT_NATIVE_APP_API_KEY } from '@env'
 
 const API = process.env.REACT_NATIVE_APP_API_KEY
-console.log(API)
+console.log(process.env.REACT_NATIVE_APP_API_KEY)
 const HiaceScreen = () => {
 
     const [data, setData] = useState([])
